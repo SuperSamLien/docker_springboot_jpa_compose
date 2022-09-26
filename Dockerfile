@@ -1,5 +1,5 @@
 # Use maven to compile the java application.
-FROM maven3.8.6-openjdk-8-slim AS build-env
+FROM maven:3.8.6-openjdk-8-slim AS build-env
 
 RUN mkdir -p optbuild
 WORKDIR optbuild
@@ -12,7 +12,7 @@ COPY . .
 # 使用maven.test.skip，不但跳過單元測試的執行，也跳過測試程式碼的編譯。
 RUN mvn -Dmaven.test.skip=true package
 
-FROM openjdk8-jre-alpine
+FROM openjdk:8-jre-alpine
 
 WORKDIR optapp
 # COPY --from instruction to copy from a separate image, 

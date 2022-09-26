@@ -9,6 +9,7 @@ services:
     volumes:
       - demo-volume:/var/lib/mysql
       - ./sqls:/docker-entrypoint-initdb.d
+    #由於mysql image自己就有定義一個docker-entrypoint-initdb.d資料夾是在資料庫初始化就執行的資料夾，使用volumes掛載進去給docker-entrypoint-initdb.d資料夾需要執行的sql或sh檔案    
     ports:
       - 3306:3306
     restart: always

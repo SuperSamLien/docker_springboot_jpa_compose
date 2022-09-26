@@ -13,5 +13,7 @@ CREATE TABLE `skill` (
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
 INSERT INTO skill (name) VALUES ('java');
+INSERT INTO skill (name) VALUES ('docker');
+INSERT INTO skill (name) VALUES ('k8s');
 
 GRANT ALL PRIVILEGES ON demo.* TO 'admin'@'%';

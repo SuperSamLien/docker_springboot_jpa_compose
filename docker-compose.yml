@@ -1,7 +1,6 @@
 version: "3.9"
 services:
   mysql:
-    platform: linux/x86_64
     image: mysql:5.7
     container_name: mysql_demo
     networks:
@@ -28,8 +27,6 @@ services:
     container_name: springio-api_demo
     networks:
       - demo-bridge
-    volumes:
-      - /var/lib/mysql
     ports:
       - 8080:8080
     restart: always
